@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="testcase" duration-ms="14596" started-at="2018-08-03T07:58:44Z" finished-at="2018-08-03T07:58:58Z">
+    <groups>
+    </groups>
+    <test name="test2" duration-ms="9628" started-at="2018-08-03T07:58:44Z" finished-at="2018-08-03T07:58:53Z">
+      <class name="seleniumTest.test.TestCase2">
+        <test-method status="PASS" signature="setWebdriver(java.lang.String, java.lang.String)[pri:0, instance:seleniumTest.test.TestCase2@1bce4f0a]" name="setWebdriver" is-config="true" duration-ms="7359" started-at="2018-08-03T15:58:44Z" finished-at="2018-08-03T15:58:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.baidu.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWebdriver -->
+        <test-method status="PASS" signature="runWebdriver()[pri:0, instance:seleniumTest.test.TestCase2@1bce4f0a]" name="runWebdriver" duration-ms="1450" started-at="2018-08-03T15:58:51Z" finished-at="2018-08-03T15:58:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runWebdriver -->
+        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:seleniumTest.test.TestCase2@1bce4f0a]" name="closeWebdriver" is-config="true" duration-ms="796" started-at="2018-08-03T15:58:52Z" finished-at="2018-08-03T15:58:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebdriver -->
+      </class> <!-- seleniumTest.test.TestCase2 -->
+    </test> <!-- test2 -->
+    <test name="test1" duration-ms="14596" started-at="2018-08-03T07:58:44Z" finished-at="2018-08-03T07:58:58Z">
+      <class name="seleniumTest.test.TestCase">
+        <test-method status="PASS" signature="setWebdriver(java.lang.String, java.lang.String)[pri:0, instance:seleniumTest.test.TestCase@18be83e4]" name="setWebdriver" is-config="true" duration-ms="7962" started-at="2018-08-03T15:58:44Z" finished-at="2018-08-03T15:58:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.baidu.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setWebdriver -->
+        <test-method status="PASS" signature="runWebdriver()[pri:0, instance:seleniumTest.test.TestCase@18be83e4]" name="runWebdriver" duration-ms="1064" started-at="2018-08-03T15:58:52Z" finished-at="2018-08-03T15:58:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runWebdriver -->
+        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:seleniumTest.test.TestCase@18be83e4]" name="closeWebdriver" is-config="true" duration-ms="5564" started-at="2018-08-03T15:58:53Z" finished-at="2018-08-03T15:58:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebdriver -->
+      </class> <!-- seleniumTest.test.TestCase -->
+    </test> <!-- test1 -->
+  </suite> <!-- testcase -->
+</testng-results>
