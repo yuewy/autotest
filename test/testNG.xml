@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="testcase" parallel="tests">
    <parameter name="url" value="https://www.baidu.com"></parameter>
-    <parameter name="  " value="chrome"></parameter>
+    <parameter name="driverType" value="chrome"></parameter>
    <test name="test1">
       <classes>
          <class name="seleniumTest.test.TestCase">

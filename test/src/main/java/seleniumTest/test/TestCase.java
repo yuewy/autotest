@@ -17,7 +17,7 @@ public class TestCase {
 			System.setProperty("webdriver.chrome.driver", "C:\\\\Program Files (x86)\\\\Google\\\\Chrome\\\\Application\\\\chromedriver.exe");
 			webDriver = new ChromeDriver();
 		}else {
-			System.out.println("暂时不支持该浏览器!");
+			System.out.println("the browser is not support!");
 		}
 		webDriver.get("https://www.baidu.com");
 		webDriver.manage().window().maximize();
