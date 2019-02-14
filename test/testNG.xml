@@ -3,6 +3,9 @@
 <suite name="testcase" parallel="tests">
    <parameter name="url" value="https://www.baidu.com"></parameter>
     <parameter name="driverType" value="chrome"></parameter>
+    <groups>
+        
+    </groups>
    <test name="test1">
       <classes>
          <class name="seleniumTest.test.TestCase">
