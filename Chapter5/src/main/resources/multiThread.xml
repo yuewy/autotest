@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="thread" parallel="methods" thread-count="2">
+
+    <!--
+
+    tests级别：相同的test tag下的测试方法都在同一线程下执行，
+    不同的test tag下的测试方法都在不同线程下执行
+
+    classes级别：相同的class tag下的测试方法都在同一线程下执行
+    不同的class tag下的测试方法可以在不同线程下执行
+
+    methods级别：所有用例都可以在不同的线程下去执行
+
+    thread-count：代表了最大线程并发数
+    -->
+    <test name="demo1">
+        <classes>
+            <class name="com.course.testng.multiThread.MultiThreadOnXml"></class>
+        </classes>
+    </test>
+
+    <test name="demo2">
+        <classes name="d1">
+            <class name="com.course.testng.multiThread.MultiThreadOnXml"></class>
+        </classes>
+    </test>
+</suite>
