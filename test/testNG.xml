@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="testcase" parallel="tests">
+   <parameter name="url" value="https://www.baidu.com"></parameter>
+    <parameter name="driverType" value="chrome"></parameter>
+    <groups>
+        
+    </groups>
+   <test name="test1">
+      <classes>
+         <class name="seleniumTest.test.TestCase">
+         </class>
+      </classes>
+   </test>
+   <test name="test2">
+      <classes>
+         <class name="seleniumTest.test.TestCase2">
+         </class>
+      </classes>
+   </test>
+</suite> 
