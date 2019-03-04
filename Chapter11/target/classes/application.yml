@@ -12,7 +12,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/course
     username: root
-    password: 86793885
+#    password: 86793885
+    password: 123456
 
 mybatis:
   type-aliases-package: com.course.model
