@@ -13,6 +13,7 @@
         <module name="Chapter5" />
         <module name="Chapter6" />
         <module name="Chapter9" />
+        <module name="getBugList" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="Chapter5" target="1.5" />
       <module name="Chapter6" target="6" />
       <module name="Chapter9" target="1.5" />
+      <module name="getBugList" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

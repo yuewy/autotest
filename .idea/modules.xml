@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Chapter6/Chapter6.iml" filepath="$PROJECT_DIR$/Chapter6/Chapter6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter9/Chapter9.iml" filepath="$PROJECT_DIR$/Chapter9/Chapter9.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/autotest.iml" filepath="$PROJECT_DIR$/.idea/autotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/getBugList/getBugList.iml" filepath="$PROJECT_DIR$/getBugList/getBugList.iml" />
     </modules>
   </component>
 </project>
