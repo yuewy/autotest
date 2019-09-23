@@ -49,7 +49,7 @@ public class GetBugList {
 
         // 创建参数队列
         List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
-        formparams.add(new BasicNameValuePair("email", ""));
+        formparams.add(new BasicNameValuePair("email", "15757129442@163.com"));
         formparams.add(new BasicNameValuePair("password", "86793885"));
         StringEntity entity =new UrlEncodedFormEntity(formparams, "UTF-8");
         post.setEntity(entity);
@@ -77,7 +77,7 @@ public class GetBugList {
         List<BasicNameValuePair> formParams = new ArrayList<BasicNameValuePair>();
         formParams.add(new BasicNameValuePair("draw", "1"));
         formParams.add(new BasicNameValuePair("start", "0"));
-        formParams.add(new BasicNameValuePair("length", "444"));
+        formParams.add(new BasicNameValuePair("length", "467"));
         StringEntity entity =new UrlEncodedFormEntity(formParams, "UTF-8");
         post.setEntity(entity);
 
