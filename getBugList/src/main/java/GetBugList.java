@@ -49,8 +49,8 @@ public class GetBugList {
 
         // 创建参数队列
         List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
-        formparams.add(new BasicNameValuePair("email", "15757129442@163.com"));
-        formparams.add(new BasicNameValuePair("password", "86793885"));
+        formparams.add(new BasicNameValuePair("email", ""));
+        formparams.add(new BasicNameValuePair("password", ""));
         StringEntity entity =new UrlEncodedFormEntity(formparams, "UTF-8");
         post.setEntity(entity);
         DefaultHttpClient client = new DefaultHttpClient();
