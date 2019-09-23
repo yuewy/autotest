@@ -3,7 +3,6 @@ import net.sf.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
@@ -50,7 +49,7 @@ public class GetBugList {
 
         // 创建参数队列
         List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
-        formparams.add(new BasicNameValuePair("email", "15757129442@163.com"));
+        formparams.add(new BasicNameValuePair("email", ""));
         formparams.add(new BasicNameValuePair("password", "86793885"));
         StringEntity entity =new UrlEncodedFormEntity(formparams, "UTF-8");
         post.setEntity(entity);
@@ -73,17 +72,19 @@ public class GetBugList {
         DefaultHttpClient httpClient = new DefaultHttpClient();
         //发起请求
         HttpPost post = new HttpPost(listUrl);
-        post.setHeader("content-type","application/json");
+        post.setHeader("content-type","application/x-www-form-urlencoded");
         // 创建参数队列
         List<BasicNameValuePair> formParams = new ArrayList<BasicNameValuePair>();
-        formParams.add(new BasicNameValuePair("start", "10"));
-        formParams.add(new BasicNameValuePair("length", "20"));
+        formParams.add(new BasicNameValuePair("draw", "1"));
+        formParams.add(new BasicNameValuePair("start", "0"));
+        formParams.add(new BasicNameValuePair("length", "444"));
         StringEntity entity =new UrlEncodedFormEntity(formParams, "UTF-8");
         post.setEntity(entity);
 
         httpClient.setCookieStore(this.store);
         HttpResponse response = httpClient.execute(post);
         //response code
+        System.out.println(post.getURI());
         int statusCode = response.getStatusLine().getStatusCode();
         System.out.println("获取bugList："+statusCode);
 
@@ -102,7 +103,7 @@ public class GetBugList {
                     String description= job.get("description")+"";
                     if (description.contains("src")){
                         String imgUrl = description.split("src=\"")[1].split("\"")[0];
-                        System.out.println("imgUrl"+imgUrl);
+                        System.out.println("imgUrl:"+imgUrl);
                         bugImgUrl.add(imgUrl);
                     }else{
                         bugImgUrl.add("");
@@ -112,7 +113,7 @@ public class GetBugList {
                     System.out.println(job.get("bug_title")+"") ;  // 得到 每个对象中的属性值
                 }
             }
-            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress);
+            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl);
         }
     }
 
