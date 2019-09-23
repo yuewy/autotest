@@ -28,6 +28,8 @@ public class GetBugList {
     private List<String> bugId = new ArrayList<String>();
     private List<String> bugExpress = new ArrayList<String>();
     private List<String> bugImgUrl = new ArrayList<String>();
+    private List<String> bugStatus = new ArrayList<String>();
+
 
 
     @BeforeTest
@@ -108,12 +110,13 @@ public class GetBugList {
                     }else{
                         bugImgUrl.add("");
                     }
+                    bugStatus.add(job.get("last_status_name")+"");
                     String bugTitle = job.get("bug_title")+"";
                     bugExpress.add(bugTitle);
                     System.out.println(job.get("bug_title")+"") ;  // 得到 每个对象中的属性值
                 }
             }
-            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl);
+            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl,bugStatus);
         }
     }
 

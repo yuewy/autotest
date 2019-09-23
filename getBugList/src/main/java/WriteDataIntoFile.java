@@ -19,12 +19,13 @@ import java.util.List;
 public class WriteDataIntoFile {
     private static String img;
 
-    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl) throws Exception{
+    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl,List bugStatus) throws Exception{
 
         //开始写入excel,创建模型文件头
-        String[] titleA = {"编号","问题描述","截图"};
+        String[] titleA = {"编号","问题描述","截图","状态"};
         //创建Excel文件，B库CD表文件
         File fileA = new File("C:\\Users\\201917687\\Desktop\\GMP\\GMP备份文件0923\\GMP.xlsx");
+        //File fileA = new File("D:\\GMP\\GMP.xlsx");
         if(fileA.exists()){
             //如果文件存在就删除
             fileA.delete();
@@ -69,7 +70,8 @@ public class WriteDataIntoFile {
                 cell.setHyperlink(link);
                 cell.setCellStyle(hlinkstyle);
             }
-
+            cell = row.createCell(3);
+            cell.setCellValue(bugStatus.get(i)+"");
         }
         //调整列宽
         int width=95;
@@ -90,6 +92,7 @@ public class WriteDataIntoFile {
         InputStream stream= entity.getContent();
         BufferedInputStream bis = new BufferedInputStream(stream);
         img = "C:\\Users\\201917687\\Desktop\\GMP\\GMP备份文件0923\\"+bugId+".png";
+        //img = "D:\\GMP\\"+bugId+".png";
         OutputStream writerStrem = new FileOutputStream(img);
         BufferedOutputStream bos = new BufferedOutputStream(writerStrem);
         int len = 0;

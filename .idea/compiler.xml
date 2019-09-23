@@ -24,7 +24,7 @@
       <module name="Chapter5" target="1.5" />
       <module name="Chapter6" target="6" />
       <module name="Chapter9" target="1.5" />
-      <module name="getBugList" target="1.5" />
+      <module name="getBugList" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
