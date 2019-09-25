@@ -29,6 +29,7 @@ public class GetBugList {
     private List<String> bugExpress = new ArrayList<String>();
     private List<String> bugImgUrl = new ArrayList<String>();
     private List<String> bugStatus = new ArrayList<String>();
+    private List<String> bugPriority = new ArrayList<String>();
 
 
 
@@ -51,7 +52,7 @@ public class GetBugList {
 
         // 创建参数队列
         List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
-        formparams.add(new BasicNameValuePair("email", ""));
+        formparams.add(new BasicNameValuePair("email", "@163.com"));
         formparams.add(new BasicNameValuePair("password", ""));
         StringEntity entity =new UrlEncodedFormEntity(formparams, "UTF-8");
         post.setEntity(entity);
@@ -79,7 +80,7 @@ public class GetBugList {
         List<BasicNameValuePair> formParams = new ArrayList<BasicNameValuePair>();
         formParams.add(new BasicNameValuePair("draw", "1"));
         formParams.add(new BasicNameValuePair("start", "0"));
-        formParams.add(new BasicNameValuePair("length", "467"));
+        formParams.add(new BasicNameValuePair("length", "500"));
         StringEntity entity =new UrlEncodedFormEntity(formParams, "UTF-8");
         post.setEntity(entity);
 
@@ -111,12 +112,13 @@ public class GetBugList {
                         bugImgUrl.add("");
                     }
                     bugStatus.add(job.get("last_status_name")+"");
+                    bugPriority.add(job.get("priority_name")+"");
                     String bugTitle = job.get("bug_title")+"";
                     bugExpress.add(bugTitle);
                     System.out.println(job.get("bug_title")+"") ;  // 得到 每个对象中的属性值
                 }
             }
-            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl,bugStatus);
+            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl,bugStatus,bugPriority);
         }
     }
 

@@ -19,10 +19,10 @@ import java.util.List;
 public class WriteDataIntoFile {
     private static String img;
 
-    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl,List bugStatus) throws Exception{
+    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl,List bugStatus,List bugPriority) throws Exception{
 
         //开始写入excel,创建模型文件头
-        String[] titleA = {"编号","问题描述","截图","状态"};
+        String[] titleA = {"编号","问题描述","截图","优先级","状态"};
         //创建Excel文件，B库CD表文件
         File fileA = new File("C:\\Users\\201917687\\Desktop\\GMP\\GMP备份文件0923\\GMP.xlsx");
         //File fileA = new File("D:\\GMP\\GMP.xlsx");
@@ -71,6 +71,8 @@ public class WriteDataIntoFile {
                 cell.setCellStyle(hlinkstyle);
             }
             cell = row.createCell(3);
+            cell.setCellValue(bugPriority.get(i)+"");
+            cell = row.createCell(4);
             cell.setCellValue(bugStatus.get(i)+"");
         }
         //调整列宽
