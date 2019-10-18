@@ -1,13 +1,8 @@
-import jxl.Workbook;
-import jxl.write.Label;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Hyperlink;
@@ -19,10 +14,10 @@ import java.util.List;
 public class WriteDataIntoFile {
     private static String img;
 
-    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl,List bugStatus,List bugPriority) throws Exception{
+    public static void writeDataIntoFile(List bugID, List bugDescription,List bugImgUrl,List bugStatus,List bugPriority,List bugModel) throws Exception{
 
         //开始写入excel,创建模型文件头
-        String[] titleA = {"编号","问题描述","截图","优先级","状态"};
+        String[] titleA = {"编号","问题描述","截图","优先级","所属模块","状态"};
         //创建Excel文件，B库CD表文件
         File fileA = new File("C:\\Users\\201917687\\Desktop\\GMP\\GMP备份文件0923\\GMP.xlsx");
         //File fileA = new File("D:\\GMP\\GMP.xlsx");
@@ -55,6 +50,7 @@ public class WriteDataIntoFile {
         }
         //获取数据源
         for (int i = 0; i < bugID.size(); i++) {
+            System.out.println("当前进度："+i);
             row= spreadsheet.createRow((short)(i+1));
             cell = row.createCell(0);
             cell.setCellValue(bugID.get(i)+"");
@@ -73,6 +69,8 @@ public class WriteDataIntoFile {
             cell = row.createCell(3);
             cell.setCellValue(bugPriority.get(i)+"");
             cell = row.createCell(4);
+            cell.setCellValue(bugModel.get(i)+"");
+            cell = row.createCell(5);
             cell.setCellValue(bugStatus.get(i)+"");
         }
         //调整列宽

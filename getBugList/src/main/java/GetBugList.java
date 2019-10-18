@@ -30,6 +30,7 @@ public class GetBugList {
     private List<String> bugImgUrl = new ArrayList<String>();
     private List<String> bugStatus = new ArrayList<String>();
     private List<String> bugPriority = new ArrayList<String>();
+    private List<String> bugModel = new ArrayList<>();
 
 
 
@@ -52,8 +53,8 @@ public class GetBugList {
 
         // 创建参数队列
         List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
-        formparams.add(new BasicNameValuePair("email", "@163.com"));
-        formparams.add(new BasicNameValuePair("password", ""));
+        formparams.add(new BasicNameValuePair("email", "15757129442@163.com"));
+        formparams.add(new BasicNameValuePair("password", "86793885"));
         StringEntity entity =new UrlEncodedFormEntity(formparams, "UTF-8");
         post.setEntity(entity);
         DefaultHttpClient client = new DefaultHttpClient();
@@ -80,7 +81,7 @@ public class GetBugList {
         List<BasicNameValuePair> formParams = new ArrayList<BasicNameValuePair>();
         formParams.add(new BasicNameValuePair("draw", "1"));
         formParams.add(new BasicNameValuePair("start", "0"));
-        formParams.add(new BasicNameValuePair("length", "500"));
+        formParams.add(new BasicNameValuePair("length", "929"));
         StringEntity entity =new UrlEncodedFormEntity(formParams, "UTF-8");
         post.setEntity(entity);
 
@@ -111,6 +112,7 @@ public class GetBugList {
                     }else{
                         bugImgUrl.add("");
                     }
+                    bugModel.add(job.get("module_name")+"");
                     bugStatus.add(job.get("last_status_name")+"");
                     bugPriority.add(job.get("priority_name")+"");
                     String bugTitle = job.get("bug_title")+"";
@@ -118,7 +120,7 @@ public class GetBugList {
                     System.out.println(job.get("bug_title")+"") ;  // 得到 每个对象中的属性值
                 }
             }
-            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl,bugStatus,bugPriority);
+            WriteDataIntoFile.writeDataIntoFile(bugId,bugExpress,bugImgUrl,bugStatus,bugPriority,bugModel);
         }
     }
 
